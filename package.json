@@ -25,6 +25,14 @@
     "lint": "eslint --cache .",
     "prepare": "husky install"
   },
+  "lint-staged": {
+    "*.tsx": [
+      "npm run format"
+    ],
+    "*.ts": [
+      "npm run format"
+    ]
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -52,6 +60,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
     "prettier": "^3.0.2"
   }
 }
