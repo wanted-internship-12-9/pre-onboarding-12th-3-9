@@ -8,7 +8,7 @@ export const handlers = [
     const searchedNoun = req.url.searchParams.get('q');
 
     if (!searchedNoun) {
-      return res(ctx.status(200), ctx.json(data));
+      return res(ctx.status(200), ctx.json([]));
     }
 
     const filteredData = {
