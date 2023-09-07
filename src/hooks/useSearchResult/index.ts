@@ -7,25 +7,19 @@ import { axiosInstance } from '../../apis/axiosInstance';
 
 export const useSearchResult = <T>(keyword: string) => {
   const [data, setData] = useState<T | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
   const debouncedKeyword = useDebounce(keyword, 500);
 
   useEffect(() => {
     const fetchData = async () => {
-      setIsLoading(true);
-      setIsError(false);
       try {
         const response = await getSearchResult(debouncedKeyword);
-        setData(response);
+        setData(response.sick);
       } catch (error) {
-        setIsError(true);
-      } finally {
-        setIsLoading(false);
+        console.error(error);
       }
     };
     fetchData();
-  }, [debouncedKeyword, setData, setIsLoading, setIsError]);
+  }, [debouncedKeyword, setData]);
 
   const getSearchResult = async (keyword: string) => {
     const cachedResponse = await getCacheData(MOCK_API_PATH.SICK, keyword);
@@ -38,6 +32,5 @@ export const useSearchResult = <T>(keyword: string) => {
       return data;
     }
   };
-
-  return [data, isLoading, isError] as const;
+  return data;
 };
