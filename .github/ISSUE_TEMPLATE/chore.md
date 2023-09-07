@@ -4,7 +4,6 @@ about: 간단한 작업 수정 이슈
 title: Chore
 labels: ''
 assignees: ''
-
 ---
 
 ## 🛠️ 작업 사항

@@ -4,7 +4,6 @@ about: 프로젝트 리팩토링 이슈
 title: Refactor
 labels: ''
 assignees: ''
-
 ---
 
 ## ♻️ 리팩토링 사항
