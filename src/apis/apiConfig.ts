@@ -1,5 +1,5 @@
-export const MOCK_API_URL = 'http://localhost:4000';
+export const API_URL = 'https://chocolate-rift-pie.glitch.me';
 
-export const MOCK_API_PATH = {
+export const API_PATH = {
   SICK: '/sick',
 } as const;
