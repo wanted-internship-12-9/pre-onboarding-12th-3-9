@@ -41,16 +41,16 @@ const Home = () => {
         event.preventDefault();
         if (index !== recommendItems.length - 1) {
           recommendItems[index + 1].focus();
-        } else {
-          recommendItems[0].focus();
+          return;
         }
+        recommendItems[0].focus();
         break;
       case KEYBOARD_EVENT.UP:
         if (index !== 0) {
           recommendItems[index - 1].focus();
-        } else {
-          inputRef.current?.focus();
+          return;
         }
+        inputRef.current?.focus();
         break;
       case KEYBOARD_EVENT.ESC:
         handleInputClear();

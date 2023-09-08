@@ -13,11 +13,15 @@ export const useSearchResult = <T>(keyword: string) => {
     const fetchData = async () => {
       try {
         const response = await getSearchResult(debouncedKeyword);
-        setData(response.sick);
+        setData(response);
       } catch (error) {
         console.error(error);
       }
     };
+    if (debouncedKeyword.length === 0) {
+      setData(null);
+      return;
+    }
     fetchData();
   }, [debouncedKeyword, setData]);
 
